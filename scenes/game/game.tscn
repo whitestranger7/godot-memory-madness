@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgcohhgbrgtdf"]
+
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_teiv4"]
+[ext_resource type="PackedScene" uid="uid://o7eclnlr3m4c" path="res://nodes/memory_tile/memory_tile.tscn" id="2_4lk0c"]
+[ext_resource type="Texture2D" uid="uid://p8kwebqdbpcp" path="res://assets/ui/blue_button00.png" id="2_8bmcg"]
+[ext_resource type="Texture2D" uid="uid://cjfinfnrjpq50" path="res://assets/ui/green_button00.png" id="3_kjvav"]
+[ext_resource type="FontFile" uid="uid://rkg1fjwcitnh" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="4_ksomu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pjfhw"]
+font = ExtResource("4_ksomu")
+font_size = 32
+
+[node name="GameScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_teiv4")
+memory_tile = ExtResource("2_4lk0c")
+
+[node name="HB" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MCGame" type="MarginContainer" parent="HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grid" type="GridContainer" parent="HB/MCGame"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+
+[node name="MCMenu" type="MarginContainer" parent="HB"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_right = 10
+
+[node name="ExitButton" type="TextureButton" parent="HB/MCMenu"]
+layout_mode = 2
+texture_normal = ExtResource("2_8bmcg")
+texture_pressed = ExtResource("3_kjvav")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="HB/MCMenu/ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+label_settings = SubResource("LabelSettings_pjfhw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HB/MCMenu/ExitButton" to="." method="_on_exit_button_pressed"]

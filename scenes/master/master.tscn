@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgo1kcd3dau73"]
+
+[ext_resource type="Texture2D" uid="uid://dhsoof5ft8hbj" path="res://assets/images/backgroundEmpty.png" id="1_0bbvf"]
+[ext_resource type="Script" path="res://scenes/master/master.gd" id="1_saxhl"]
+[ext_resource type="PackedScene" uid="uid://bgcohhgbrgtdf" path="res://scenes/game/game.tscn" id="2_cpbki"]
+[ext_resource type="PackedScene" uid="uid://bqjxyy7drtojn" path="res://scenes/main/main.tscn" id="3_v07c0"]
+
+[node name="MasterScene" type="CanvasLayer"]
+script = ExtResource("1_saxhl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0bbvf")
+expand_mode = 2
+
+[node name="GameScene" parent="." instance=ExtResource("2_cpbki")]
+
+[node name="MainScene" parent="." instance=ExtResource("3_v07c0")]
