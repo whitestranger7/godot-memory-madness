@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgcohhgbrgtdf"]
+[gd_scene load_steps=8 format=3 uid="uid://bgcohhgbrgtdf"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_teiv4"]
 [ext_resource type="PackedScene" uid="uid://o7eclnlr3m4c" path="res://nodes/memory_tile/memory_tile.tscn" id="2_4lk0c"]
 [ext_resource type="Texture2D" uid="uid://p8kwebqdbpcp" path="res://assets/ui/blue_button00.png" id="2_8bmcg"]
-[ext_resource type="PackedScene" uid="uid://3q8qt0pt23en" path="res://scenes/win/win.tscn" id="2_22gct"]
 [ext_resource type="Texture2D" uid="uid://cjfinfnrjpq50" path="res://assets/ui/green_button00.png" id="3_kjvav"]
 [ext_resource type="LabelSettings" uid="uid://d1pmj1up3n705" path="res://scenes/game/label_settings.tres" id="3_s7vov"]
 [ext_resource type="FontFile" uid="uid://rkg1fjwcitnh" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="4_ksomu"]
@@ -20,7 +19,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_teiv4")
-won_scene = ExtResource("2_22gct")
 memory_tile = ExtResource("2_4lk0c")
 
 [node name="HB" type="HBoxContainer" parent="."]
