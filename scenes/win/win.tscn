@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://3q8qt0pt23en"]
+
+[ext_resource type="FontFile" uid="uid://dr4dmw07gko7i" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_beiuq"]
+[ext_resource type="Script" path="res://scenes/win/win.gd" id="1_ja0ds"]
+[ext_resource type="Texture2D" uid="uid://p8kwebqdbpcp" path="res://assets/ui/blue_button00.png" id="2_tnnpv"]
+[ext_resource type="Texture2D" uid="uid://cjfinfnrjpq50" path="res://assets/ui/green_button00.png" id="3_apm7k"]
+[ext_resource type="FontFile" uid="uid://rkg1fjwcitnh" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="4_toa6e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_53r76"]
+font = ExtResource("1_beiuq")
+font_size = 72
+outline_size = 10
+outline_color = Color(0.054902, 0.054902, 0.054902, 0.572549)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o30b8"]
+font = ExtResource("4_toa6e")
+font_size = 22
+
+[node name="WinScene" type="Control" groups=["won_scene"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ja0ds")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.5
+offset_top = -40.0
+offset_right = 318.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CONGRATULATIONS!"
+label_settings = SubResource("LabelSettings_53r76")
+
+[node name="Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_tnnpv")
+texture_pressed = ExtResource("3_apm7k")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+label_settings = SubResource("LabelSettings_o30b8")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
